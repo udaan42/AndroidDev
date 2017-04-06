@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cs442.dsuraj.quantumc"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Optional permission for App measurement to run. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logoq"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.cs442.dsuraj.quantumc.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.cs442.dsuraj.quantumc.Detail2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cs442.dsuraj.quantumc.Theatre"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cs442.dsuraj.quantumc.Confirmation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cs442.dsuraj.quantumc.UserInformation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cs442.dsuraj.quantumc.DialogBox"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cs442.dsuraj.quantumc.Main2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cs442.dsuraj.quantumc.MovieConfirmation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cs442.dsuraj.quantumc.SeatSelection"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cs442.dsuraj.quantumc.ComingSoon"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.cs442.dsuraj.quantumc.Login"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.cs442.dsuraj.quantumc.UserReview"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <provider
+            android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"
+            android:authorities="com.cs442.dsuraj.quantumc.google_measurement_service"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>
